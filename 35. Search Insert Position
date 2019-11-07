@@ -1,0 +1,16 @@
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        front = 0
+        back = len(nums) - 1
+
+        while front <= back:
+            middle = (front + back) // 2
+            if target < nums[middle]:
+                back = middle - 1
+            if target > nums[middle]:
+                front = middle + 1
+            if target == nums[middle]:
+                break
+        else:
+            return max(front, back)
+        return middle
