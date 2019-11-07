@@ -1,0 +1,10 @@
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        length = len(nums)
+        try:
+            font_position = nums.index(target)
+            back_postion = nums[::-1].index(target)
+        except Exception as e:
+            return [-1, -1]
+        else:
+            return [font_position, length - back_postion - 1]
