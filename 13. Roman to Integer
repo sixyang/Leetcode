@@ -1,0 +1,26 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        value = 0
+        h = {
+            "I": 1,
+            'V': 5,
+            'X': 10,
+            'L': 50,
+            'C': 100,
+            'D': 500,
+            'M': 1000
+            }
+        length = len(s)
+        for index, element in enumerate(s):
+            if index != length - 1:
+                if element == 'I' and (s[index+1] == 'V' or s[index+1] == 'X'):
+                    value -= 1
+                elif element == 'X' and (s[index+1] == 'L' or s[index+1] == 'C'):
+                    value -= 10
+                elif element == 'C' and (s[index+1] == 'D' or s[index+1] == 'M'):
+                    value -= 100
+                else:
+                    value += h[element]
+            else:
+                value += h[element]
+        return value
