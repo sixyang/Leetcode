@@ -1,0 +1,17 @@
+import string
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        if s == '':return True
+        else:
+            s_list = list(s)
+            s_list = [i.lower() for i in s_list if i in string.ascii_letters or i in string.digits]
+            length = len(s_list)
+            left = 0
+            right = length - 1
+            while left < right:
+                if s_list[left] == s_list[right]:
+                    left += 1
+                    right -= 1
+                    continue
+                else:return False
+            return True
