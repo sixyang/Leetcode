@@ -1,0 +1,17 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        relation = {}
+        length = len(nums)
+        for i in nums:
+            if i not in relation:
+                relation[i] = 1
+            else:
+                relation[i] += 1
+        for index, item in relation.items():
+            if item > length / 2:
+                return index
+        
