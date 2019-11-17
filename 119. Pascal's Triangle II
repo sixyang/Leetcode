@@ -1,0 +1,16 @@
+class Solution(object):
+    def getRow(self, rowIndex):
+        """
+        :type rowIndex: int
+        :rtype: List[int]
+        """
+        nums = [[1 for j in range(i+1)] for i in range(rowIndex+1)]
+
+        for i in range(rowIndex+1):
+            m = i
+            n = 1
+            while n < m:
+                if n != m:
+                    nums[m][n] = nums[m-1][n-1] + nums[m-1][n]       
+                n += 1
+        return nums[rowIndex]
