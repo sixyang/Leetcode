@@ -1,0 +1,11 @@
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        times = 6
+        if n == 1:
+            return True
+        while times > 0 and n != 1:
+            n = sum([int(x)**2 for x in list(str(n))])
+            times -= 1
+            if n == 1:
+                return True
+        return False
