@@ -1,0 +1,21 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+        else:
+            ret1 = self.foo(s, t)
+            ret2 = self.foo(t, s)
+            if ret1 and ret2:
+                return True
+            else:
+                return False
+            
+    def foo(self, s, t):
+        tmp_dict = dict()
+        for index, i in enumerate(s):
+                if i not in tmp_dict:
+                    tmp_dict[i] = t[index]
+                else:
+                    if tmp_dict[i] != t[index]:
+                        return False
+        return True
