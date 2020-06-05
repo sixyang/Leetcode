@@ -1,0 +1,21 @@
+class Operations:
+    # 从北京到上海，不允许用交通工具。哈哈
+
+    def __init__(self):
+        pass
+
+    def minus(self, a: int, b: int) -> int:
+        return a.__sub__(b)
+
+    def multiply(self, a: int, b: int) -> int:
+        return a.__mul__(b)
+
+    def divide(self, a: int, b: int) -> int:
+        return int(a.__truediv__(b))
+
+
+# Your Operations object will be instantiated and called as such:
+# obj = Operations()
+# param_1 = obj.minus(a,b)
+# param_2 = obj.multiply(a,b)
+# param_3 = obj.divide(a,b)
